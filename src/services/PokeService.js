@@ -43,7 +43,7 @@ export const GetPokemonBySearch = () => {
     useEffect(() => {
         const getPokeById = async() => {
             try {
-                const { data } = await AxiosClient.get(`https://pokeapi.co/api/v2/pokemon/${search}`);
+                const { data } = await AxiosClient.get(`https://pokeapi.co/api/v2/pokemon/${search.toLowerCase()}`);
     
                 setResultPoke(data);
                 setSavedPokemons([data, ...savedPokemons]);
